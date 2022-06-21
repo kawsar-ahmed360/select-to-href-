@@ -1,0 +1,6 @@
+                                  <select class="bootstrap-select" onchange="location=this.value;">
+                                        <option disabled selected>---Category---</option>
+                                        @foreach(\App\Models\Admin\CategoryManage::where('highlight','1')->get(); as $key=>$cat)
+                                        <option value="{{route('CategoryShopPage',base64_encode($cat->id))}}">{{@$cat->category_name}}</option>
+                                         @endforeach
+                                    </select>
